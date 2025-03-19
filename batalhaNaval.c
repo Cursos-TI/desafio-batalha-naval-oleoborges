@@ -35,6 +35,51 @@ int main() {
     // 0 0 1 0 0
     // 1 1 1 1 1
     // 0 0 1 0 0
+    // Correção da matriz: agora possui 3 linhas e 6 colunas corretamente
+    int tabuleiro[10][10] = {
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+    };
 
+
+    //navio 1
+    for (int x = 3; x < 4; x++)
+    {
+        for (int y = 4; y < 7; y++){
+            tabuleiro[x][y]=3;
+        }
+    }
+    //navio 2
+    for (int x = 7; x < 10; x++)
+    {
+        for (int y = 7; y < 8; y++){
+        tabuleiro[x][y]=3;
+        }
+    }
+
+    //cabeçalho
+    char letras='A';
+    printf("   "); 
+    for (int i = 0; i < 10; i++) {
+        printf("%3c ", letras); 
+        letras++;
+        if(i==9){ printf("\n"); }
+    }
+        // Loop para imprimir a matriz como tabela
+        for (int i = 0; i < 10; i++) {
+            printf("%3d",i+1); // Pula para a próxima linha
+            for (int j = 0; j < 10; j++) {
+                printf("%3d ", tabuleiro[i][j]); // %4d alinha os números em 4 espaços
+            }
+            printf("\n"); // Pula para a próxima linha
+        }
     return 0;
 }
